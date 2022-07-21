@@ -1,0 +1,3 @@
+CREATE TABLE CLIENTE(id primary key not null  autoincrement,nome varchar(80) not null , email varchar(40) not null, telefone int)
+
+INSERT INTO CLIENTE VALUES(1, "Betty", "betty@techcamps.com", 12345678)
