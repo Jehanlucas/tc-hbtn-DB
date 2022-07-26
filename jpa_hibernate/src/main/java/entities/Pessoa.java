@@ -18,17 +18,17 @@ public class Pessoa implements Serializable {
     private String email;
     private int idade ;
     private String cpf;
-    private Date data_de_nascimento;
+    private Date dataNascimento;
 
     private Pessoa(){}
 
-    public Pessoa(Long id, String nome, String email, int idade, String cpf, Date data_de_nascimento) {
+    public Pessoa(Long id, String nome, String email, int idade, String cpf, Date dataNascimento) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.idade = idade;
         this.cpf = cpf;
-        this.data_de_nascimento = data_de_nascimento;
+        this.dataNascimento = dataNascimento;
     }
 
     public Long getId() {
@@ -71,11 +71,11 @@ public class Pessoa implements Serializable {
         this.cpf = cpf;
     }
 
-    public Date getData_de_nascimento() {
-        return data_de_nascimento;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setData_de_nascimento(Date data_de_nascimento) {
-        this.data_de_nascimento = data_de_nascimento;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 }
