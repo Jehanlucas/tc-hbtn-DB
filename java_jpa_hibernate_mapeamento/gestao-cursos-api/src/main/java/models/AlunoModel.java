@@ -35,13 +35,13 @@ public class AlunoModel {
     }
 
     public static List<Aluno> findAll() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("database_admin_jpa.db");
         EntityManager em = emf.createEntityManager();
         return em.createQuery("FROM " +
                 Aluno.class.getName()).getResultList();
     }
     public void update(Aluno aluno) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("database_admin_jpa.db");
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
@@ -50,7 +50,7 @@ public class AlunoModel {
     }
 
     public void delete(Aluno aluno) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("database_admin_jpa.db");
         EntityManager em = emf.createEntityManager();
 
         Aluno produtoBuscado = em.find(Aluno.class, aluno);

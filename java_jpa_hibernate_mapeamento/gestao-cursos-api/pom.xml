@@ -6,6 +6,7 @@
 
     <groupId>com.techcamps.gestao.cursos</groupId>
     <artifactId>gestao-cursos-api</artifactId>
+    <description>Projeto Gestão de Cursos usando Hibernate e JPA</description>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

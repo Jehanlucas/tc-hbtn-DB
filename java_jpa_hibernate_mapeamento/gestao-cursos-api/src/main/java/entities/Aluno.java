@@ -17,7 +17,7 @@ public class Aluno implements Serializable {
     private Long id ;
     private String nomeCompleto ;
     private String matricula ;
-    private Date dataNascimento ;
+    private Date nascimento ;
     private String email;
 
     @OneToMany
@@ -28,14 +28,17 @@ public class Aluno implements Serializable {
     @JoinColumn(name="telefone_id")
     private List<Telefone>telefones ;
 
+
+
+
     public Aluno() {
     }
 
-    public Aluno(Long id, String nomeCompleto, String matricula, Date dataNascimento, String email) {
+    public Aluno(Long id, String nomeCompleto, String matricula, Date nascimento, String email) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.matricula = matricula;
-        this.dataNascimento = dataNascimento;
+        this.nascimento = nascimento;
         this.email = email;
     }
 
@@ -64,11 +67,11 @@ public class Aluno implements Serializable {
     }
 
     public Date getDataNascimento() {
-        return dataNascimento;
+        return nascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataNascimento(Date nascimento) {
+        this.nascimento = nascimento;
     }
 
     public String getEmail() {

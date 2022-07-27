@@ -9,9 +9,9 @@ import javax.persistence.Persistence;
 import java.util.List;
 
 public class CursoModel {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
-    EntityManager em = emf.createEntityManager();
     public void create(Curso curso) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManager em = emf.createEntityManager();
         try {
             System.out.println("Iniciando a transação");
             em.getTransaction().begin();
@@ -28,21 +28,29 @@ public class CursoModel {
     }
 
     public Curso findById(Curso id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManager em = emf.createEntityManager();
         Curso pessoaBuscado = em.find(Curso.class, id);
         return pessoaBuscado;
     }
 
     public List<Curso> findAll() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManager em = emf.createEntityManager();
         return em.createQuery("FROM " +
                 Curso.class.getName()).getResultList();
     }
     public void update(Curso curso) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         Curso atualizacao = em.merge(curso);
         em.getTransaction().commit();
     }
 
     public void delete(Curso curso) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestao-cursos-jpa");
+        EntityManager em = emf.createEntityManager();
         Curso produtoBuscado = em.find(Curso.class, curso);
         em.getTransaction().begin();
         em.remove(curso);

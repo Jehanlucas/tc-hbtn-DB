@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -12,6 +13,9 @@ public class Telefone implements Serializable {
     private Long id ;
     private String DDD ;
     private String numero ;
+
+    @ManyToOne
+    private Aluno aluno ;
 
     public Telefone() {
     }
